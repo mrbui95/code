@@ -1,0 +1,265 @@
+Thuật toán sắp xếp
+1.	QuickSort
+	src/main/java/QuickSort.java
+
+
+
+Thuật toán tìm kiếm
+
+
+
+Thuật toán khác liên quan đến Array
+	1. Kadane's Algorithm
+		Cho một mảng Arr[] gồm N số nguyên. Tìm mảng con liền kề (chứa ít nhất một số) có tổng lớn nhất và trả về tổng của nó.
+		src/main/java/Kadane.java
+		
+	2. Xây dựng dãy đảo ngược
+		Cho một mảng arr[] gồm các số nguyên dương kích thước N. Đảo ngược mọi nhóm mảng con kích thước K.
+		Lưu ý: Nếu tại bất kỳ trường hợp nào, không có mảng con nào có kích thước lớn hơn hoặc bằng K, thì hãy đảo ngược mảng con cuối cùng (bất kể kích thước của nó). Bạn không nên trả về bất kỳ mảng nào, hãy sửa đổi mảng đã cho tại chỗ.
+		VD: [1,2,3,4,5], K=3 => Dãy đảo ngược: [3,2,1,5,4] 
+		src/main/java/ReverseInGroup.java
+		
+	3. Tìm số bước nhảy ngắn nhất
+		Cho một mảng gồm N số nguyên arr[] trong đó mỗi phần tử biểu thị độ dài tối đa của bước nhảy có thể được thực hiện từ phần tử đó. Điều này có nghĩa là nếu arr[i] = x, thì chúng ta có thể nhảy khoảng cách y bất kỳ sao cho y ≤ x. Tìm số bước nhảy ít nhất để đến cuối mảng (bắt đầu từ phần tử đầu tiên). Nếu một phần tử là 0, thì bạn không thể di chuyển qua phần tử đó.
+		Lưu ý: Trả về -1 nếu bạn không thể đến cuối mảng.
+		Ví dụ: arr[] = {1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9} 
+		Output: 3 (1 (nhảy 1 bước) -> 3 (nhảy 3 bước) -> 9 (nhảy 6 bước)) 
+		src/main/java/MinJumps.java
+	
+	4. Tìm phần tử nhỏ thứ K trong mảng
+		Cho một mảng arr[] và một số nguyên K trong đó K nhỏ hơn kích thước của mảng, nhiệm vụ là tìm phần tử nhỏ thứ K trong mảng đã cho. Nó được cho rằng tất cả các phần tử mảng là khác biệt.
+		src/main/java/KthSmallest.java
+		
+	5. Tìm khoảng cách lớn nhất
+		Cho một mảng arr[] biểu thị chiều cao của N tòa tháp và một số nguyên dương K. Đối với mỗi tòa tháp, bạn phải thực hiện chính xác một trong các thao tác sau đúng một lần.
+			Tăng chiều cao của tháp thêm K
+			Giảm chiều cao của tháp xuống K
+		Tìm ra sự khác biệt tối thiểu có thể có giữa chiều cao của tòa tháp thấp nhất và tòa tháp cao nhất sau khi bạn đã sửa đổi từng tòa tháp.
+		(Bắt buộc phải tăng giảm chiều cao theo K cho mỗi tháp. Sau thao tác, mảng kết quả không được chứa bất kỳ số nguyên âm nào.)
+		src/main/java/MinDiff.java
+		
+	6. Tìm số cặp nghịch đảo
+		Cho một mảng các số nguyên. Tìm số lượng đảo ngược trong mảng.
+		Số lượng đảo ngược: Đối với một mảng, số lượng đảo ngược cho biết khoảng cách (hoặc gần) mảng được sắp xếp. Nếu mảng đã được sắp xếp thì số đảo ngược là 0. Nếu một mảng được sắp xếp theo thứ tự đảo ngược thì số đảo ngược là lớn nhất.
+		Về hình thức, hai phần tử a[i] và a[j] tạo thành một nghịch đảo nếu a[i] > a[j] và i < j.
+			Input: N = 5, arr[] = {2, 4, 1, 3, 5}
+			Output: 3
+			Explanation: The sequence 2, 4, 1, 3, 5 
+			has three inversions (2, 1), (4, 1), (4, 3).
+		src/main/java/InverseCount.java
+		
+	7. Trapping Rain Water
+		Cho một mảng arr[] gồm N số nguyên không âm biểu thị chiều cao của các khối. Nếu chiều rộng của mỗi khối là 1, hãy tính lượng nước có thể bị giữ lại giữa các khối trong mùa mưa.
+		src/main/java/TrappingWater.java
+		
+	8. Số ga nhỏ nhất
+		Cho biết thời gian đến và đi của tất cả các chuyến tàu đến ga đường sắt. Tìm số sân ga tối thiểu cần thiết cho nhà ga để không có đoàn tàu nào phải đợi.
+		Giả sử rằng tất cả các chuyến tàu đến trong cùng một ngày và rời đi trong cùng một ngày. Thời gian đến và đi không bao giờ giống nhau đối với một chuyến tàu nhưng chúng ta có thể có thời gian đến của một chuyến tàu bằng với thời gian khởi hành của chuyến tàu kia. Tại bất kỳ thời điểm cụ thể nào, không thể sử dụng cùng một sân ga cho cả chuyến tàu khởi hành và điểm đến của một chuyến tàu khác. Trong những trường hợp như vậy, chúng tôi cần các ga khác nhau.
+			Input: n = 6 
+			arr[] = {0900, 0940, 0950, 1100, 1500, 1800}
+			dep[] = {0910, 1200, 1120, 1130, 1900, 2000}
+			Output: 3
+			Explanation: 
+			Minimum 3 platforms are required to safely arrive and depart all trains.
+		src/main/java/FindPlatform.java
+			
+	
+	9. Tìm số bị thiếu và lặp
+		Cho một mảng Arr chưa sắp xếp có kích thước N gồm các số nguyên dương. Một số 'A' từ bộ {1, 2,....,N} bị thiếu và một số 'B' xuất hiện hai lần trong mảng. Tìm hai số này.
+		src/main/java/FindTwoElement.java
+
+	10. Tìm dãy con có tích lớn nhất
+		Cho một mảng Arr[] chứa N số nguyên (có thể dương, âm hoặc không). Tìm sản phẩm của mảng con sản phẩm tối đa.
+		src/main/java/MaxProduct.java
+		
+	11. Tìm số lớn nhất trong bộ K số liền nhau trong mảng N số 
+		Cho một mảng arr[] có kích thước N và một số nguyên K. Tìm giá trị lớn nhất cho mỗi và mọi mảng con liền kề có kích thước K.
+			Input:
+			N = 9, K = 3
+			arr[] = 1 2 3 1 4 5 2 3 6
+			Output: 
+			3 3 4 5 5 5 6 
+			Explanation: 
+			1st contiguous subarray = {1 2 3} Max = 3
+			2nd contiguous subarray = {2 3 1} Max = 3
+			3rd contiguous subarray = {3 1 4} Max = 4
+			4th contiguous subarray = {1 4 5} Max = 5
+			5th contiguous subarray = {4 5 2} Max = 5
+			6th contiguous subarray = {5 2 3} Max = 5
+			7th contiguous subarray = {2 3 6} Max = 6
+		src/main/java/MaxOfSubArray.java
+		
+	12. Tìm bộ 3 số
+		Cho một mảng mảng có kích thước n và một số nguyên X. Tìm xem có bộ ba nào trong mảng có tổng bằng số nguyên X đã cho hay không.
+		src/main/java/FindSum3.java
+		
+	13. Tìm số nguyên dương nhỏ nhất bị thiếu
+		Bạn được cung cấp một mảng arr[] gồm N số nguyên bao gồm 0. Nhiệm vụ là tìm số dương nhỏ nhất còn thiếu trong mảng.
+		src/main/java/SmallestPositiveMissingNumber.java
+		
+	14. Ma trận xoắn ốc
+		Cho một ma trận kích thước r*c. Đi qua ma trận ở dạng xoắn ốc.
+		src/main/java/SpirallyTraversingMatrix.java
+		
+	15. Tìm dòng trong mảng 2 chiều boolean có nhiều giá trị 1 nhất 
+		Cho một mảng boolean 2D có kích thước n x m trong đó mỗi hàng được sắp xếp. Tìm chỉ mục dựa trên 0 của hàng đầu tiên có số lượng 1 lớn nhất.
+		src/main/java/RowMax1.java
+		
+	16. Tổng số cách tính tiền
+		Cho một mảng số nguyên coins[ ] có kích thước N đại diện cho các mệnh giá tiền tệ khác nhau và một tổng số nguyên, hãy tìm số cách bạn có thể tính tổng bằng cách sử dụng các kết hợp khác nhau từ coins[ ].
+		Lưu ý: Giả sử rằng bạn có nguồn cung cấp vô hạn cho từng loại tiền xu.
+		src/main/java/CoinChange.java
+		
+	17. Tìm người nổi tiếng
+		Người nổi tiếng là người được mọi người biết đến nhưng không biết ai trong bữa tiệc. Nếu bạn đến dự một bữa tiệc gồm N người, hãy tìm xem có người nổi tiếng nào trong bữa tiệc hay không.
+		Ma trận NxN vuông M[][] được sử dụng để đại diện cho những người trong bữa tiệc sao cho nếu một phần tử của hàng i và cột j được đặt thành 1 thì có nghĩa là người thứ i biết người thứ j. Ở đây M[i][i] sẽ luôn bằng 0.
+		Lưu ý: Thực hiện theo chỉ mục dựa trên 0.
+		Theo dõi: Bạn có thể tối ưu hóa nó thành O(N)
+		src/main/java/Celebrity.java
+		
+	18. Sắp xếp lại hai mảng và tìm phần tử thứ k
+		Cho hai mảng đã sắp xếp arr1 và arr2 có kích thước lần lượt là N và M và một phần tử K. Nhiệm vụ là tìm phần tử nằm ở vị trí thứ k của mảng được sắp xếp cuối cùng.
+			Input:
+			arr1[] = {2, 3, 6, 7, 9}
+			arr2[] = {1, 4, 8, 10}
+			k = 5
+			Output:
+			6
+			Explanation:
+			The final sorted array would be -
+			1, 2, 3, 4, 6, 7, 8, 9, 10
+			The 5th element of this array is 6.
+		src/main/java/Sort2ArrAndFindKthElement.java
+		
+	19. Tìm mảng con dài nhất có tổng các phần tử bằng K
+		Cho một mảng chứa N số nguyên và một số nguyên K. Nhiệm vụ của bạn là tìm độ dài của Mảng con dài nhất có tổng các phần tử bằng giá trị K đã cho.
+		src/main/java/LongestSubArray.java
+		
+	20. Thuật toán trộm tối ưu
+		Stickler tên trộm muốn cướp tiền từ một xã hội có n ngôi nhà trên một hàng. Anh ta là một người kỳ quặc và tuân theo một quy tắc nhất định khi cướp phá các ngôi nhà. Theo quy tắc, anh ta sẽ không bao giờ cướp hai ngôi nhà liên tiếp. Đồng thời, anh ta muốn tối đa hóa số tiền mình cướp được. Kẻ trộm biết nhà nào có bao nhiêu tiền nhưng không thể đưa ra chiến lược cướp bóc tối ưu. Anh ta nhờ bạn giúp tìm số tiền tối đa có thể nhận được nếu tuân thủ nghiêm ngặt quy tắc. Mỗi ngôi nhà có một [i]số tiền hiện diện trong đó.
+		src/main/java/SticklerThief.java
+		
+	21. Đếm số ngày liên tiếp trước đó có giá trị nhỏ hơn giá trị hiện tại
+		Bài toán nhịp giá cổ phiếu là một bài toán tài chính trong đó chúng ta có một loạt n báo giá hàng ngày cho một cổ phiếu và chúng ta cần tính khoảng giá cổ phiếu trong tất cả n ngày.
+		Khoảng cách Si của giá cổ phiếu vào một ngày nhất định i được định nghĩa là số ngày liên tiếp tối đa ngay trước ngày đã cho mà giá của cổ phiếu vào ngày hiện tại nhỏ hơn hoặc bằng giá của nó vào ngày đã cho. .
+		Ví dụ: nếu một mảng giá trong 7 ngày được cho là {100, 80, 60, 70, 60, 75, 85}, thì các giá trị khoảng cho 7 ngày tương ứng là {1, 1, 1, 2, 1, 4 , 6}.
+		src/main/java/CalculateSpan.java
+		
+	22. Tìm khoảng cách index lớn nhất j-i sao cho a[j] >= a[i]
+		Cho một mảng arr[] gồm n số nguyên dương. Nhiệm vụ là tìm giá trị lớn nhất của j - i chịu ràng buộc của arr[i] <= arr[j].
+			Input:
+			n = 9
+			arr[] = {34, 8, 10, 3, 2, 80, 30, 33, 1}
+			Output: 
+			6
+			Explanation: 
+			In the given array arr[1] < arr[7]  satisfying 
+			the required condition (arr[i] <= arr[j])  thus 
+			giving the maximum difference of j - i which is
+			6(7-1).
+		src/main/java/MaximumIndex.java
+		
+	23. Tìm bộ 3 số Pythagore
+		Cho một mảng arr gồm N số nguyên, hãy viết hàm trả về giá trị true nếu tồn tại bộ ba (a, b, c) thỏa mãn a2 + b2 = c2, ngược lại trả về giá trị false.
+		src/main/java/Pythagore.java
+		
+	24. Tìm k phần tử lớn nhất trong mảng
+		Cho một mảng Arr gồm N số nguyên dương và một số nguyên K, tìm K phần tử lớn nhất trong mảng. Các yếu tố đầu ra nên được in theo thứ tự giảm dần.
+		src/main/java/KLargestElement.java
+		
+	25. Tìm số lần hoán đổi tối thiểu để sắp xếp mảng
+		Cho một mảng n phần tử phân biệt. Tìm số lần hoán đổi tối thiểu cần thiết để sắp xếp mảng theo thứ tự tăng dần.
+		src/main/java/MinSwapToSort.java
+		
+	26. Tìm số lần xuất hiện của phần tử
+		Cho một mảng đã sắp xếp Arr có kích thước N và một số X, bạn cần tìm số lần xuất hiện của X trong Arr.
+		
+	27. Tìm số lần swap tối thiểu để tìm được dãy con K sao cho các số nhỏ hơn 1 số cho trước
+		Cho một mảng arr gồm n số nguyên dương và một số k. Người ta có thể áp dụng thao tác hoán đổi trên mảng bất kỳ số lần nào, tức là chọn bất kỳ hai chỉ số i và j (i < j) và hoán đổi arr[i] , arr[j] . Tìm số lần hoán đổi tối thiểu cần thiết để mang tất cả các số nhỏ hơn hoặc bằng k lại với nhau, tức là biến chúng thành một mảng con liền kề.
+			Input : 
+			arr[ ] = {2, 7, 9, 5, 8, 7, 4} 
+			K = 6 
+			Output :  
+			2 
+			Explanation: 
+			To bring elements 2, 5, 4 together, 
+			swap index 0 with 2 (0-based indexing)
+			and index 4 with 6 (0-based indexing)
+			such that final array will be- 
+			arr[] = {9, 7, 2, 5, 4, 7, 8}
+		src/main/java/MinSwapToGetSubArrayLessThanK.java
+		
+	28. Tìm số lớn nhất
+		Đưa ra một danh sách các số nguyên không âm, hãy sắp xếp chúng theo cách sao cho chúng tạo thành số lớn nhất có thể. Kết quả sẽ rất lớn, do đó trả về kết quả ở dạng một chuỗi.
+		src/main/java/LargestNumber.java
+		
+	29. Tìm số mảng con có tổng bằng 0
+		Bạn được cung cấp một mảng arr[] có kích thước n. Tìm tổng số mảng con có tổng bằng 0.
+		src/main/java/SubArraySum0.java
+		
+	30. Tìm kiếm số tam giác
+		Cho một mảng arr[] chưa sắp xếp gồm n số nguyên dương. Tìm số tam giác có thể được tạo thành với ba phần tử mảng khác nhau là độ dài ba cạnh của tam giác.
+		src/main/java/CountTriangle.java
+		
+	31. Tìm cách cắt mảnh ghép để đạt giá trị lớn nhất
+		Cho một thanh dài N inch và một dãy giá, price[]. giá [i] biểu thị giá trị của một mảnh có chiều dài i. Xác định giá trị lớn nhất có thể đạt được bằng cách cắt thanh và bán các mảnh.
+			Input:
+			N = 8
+			Price[] = {1, 5, 8, 9, 10, 17, 17, 20}
+			Output:
+			22
+			Explanation:
+			The maximum obtainable value is 22 by 
+			cutting in two pieces of lengths 2 and 
+			6, i.e., 5+17=22.
+			(1 mảnh 2 và 1 mảnh 6)
+		src/main/java/RodCutting.java
+	
+	32. Hoán đổi 2 số của 2 mảng với nhau tạo thành 2 mảng mới có tổng bằng nhau
+		Cho hai mảng số nguyên A[] và B[] có kích thước N và M, nhiệm vụ là kiểm tra xem có tồn tại một cặp giá trị (một giá trị từ mỗi mảng) sao cho việc hoán đổi các phần tử của cặp này sẽ tạo thành tổng của hai mảng bằng nhau.
+		src/main/java/SwapToCreate2SumEqualArray.java
+
+	33. Tìm chuỗi con ngắn nhất chứa tất cả các ký tự trong chuỗi đã cho ban đầu
+		Đưa ra một chuỗi 's'. Nhiệm vụ là tìm độ dài cửa sổ nhỏ nhất chứa tất cả các ký tự của chuỗi đã cho ít nhất một lần.
+		Ví dụ. A = aabcbcdbca, thì kết quả sẽ là 4 vì cửa sổ nhỏ nhất sẽ là dbca.
+		src/main/java/FindSmallestDistinctString.java
+		
+	34. Tìm 2 số từ tập các chữ số đã cho sao cho tổng nhỏ nhất
+		Cho một mảng Arr có kích thước N sao cho mỗi phần tử nằm trong khoảng từ 0 đến 9. Tìm tổng nhỏ nhất có thể có của hai số được tạo bằng cách sử dụng các phần tử của mảng. Tất cả các chữ số trong mảng đã cho phải được sử dụng để tạo thành hai số.
+			Input:
+			N = 5
+			Arr[] = {5, 3, 0, 7, 4}
+			Output: 82
+			Explanation: The minimum sum is 
+			formed by numbers 35 and 047.
+		src/main/java/Find2NumberMinSum.java
+	
+	35. Sắp xếp ma trận thành mảng
+		Cho K mảng đã sắp xếp được sắp xếp dưới dạng một ma trận kích thước K*K. Nhiệm vụ là hợp nhất chúng thành một mảng được sắp xếp.
+		src/main/java/SortMatrixToArray.java
+		
+	36. Tìm các xâu nhị phân có N ký tự và 2 số 1 không nằm cạnh nhau
+		Cho một số nguyên dương N, hãy đếm tất cả các xâu nhị phân riêng biệt có thể có độ dài N sao cho không có số 1 liên tiếp. Xuất câu trả lời của bạn theo modulo 10^9 + 7.
+		src/main/java/CountBinaryString.java
+		
+	37. Tìm tổng 2 phần tử gần 0 nhất
+		Cho một mảng số nguyên gồm N phần tử. Bạn cần tìm tổng lớn nhất của hai phần tử sao cho tổng gần bằng 0 nhất.
+		src/main/java/Sum2ElementClosetTo0.java
+		
+	38. Đếm số phần tử nhỏ hơn trong mảng còn lại
+		Cho hai mảng chưa sắp xếp arr1[] và arr2[]. Chúng có thể chứa các bản sao. Đối với mỗi phần tử trong mảng1[] đếm các phần tử nhỏ hơn hoặc bằng nó trong mảng arr2[].
+		src/main/java/CountElementLess.java
+		
+	39. Đếm số lần xuất hiện đảo chữ
+		Đưa ra một từ pat và một văn bản txt. Trả về số lần xuất hiện đảo chữ cái của từ trong văn bản.
+		src/main/java/CountConcurentText.java
+	
+	40. Tìm số trong mảng 1 nhưng ko có trong mảng 2
+		Cho hai mảng A và B chứa các số nguyên kích thước N và M, nhiệm vụ là tìm các số có trong mảng thứ nhất nhưng không có trong mảng thứ hai.
+		src/main/java/FindMissingElement.java
+		
+	41. Tìm số tổ hợp dãy con sao cho tích của chúng nhỏ hơn 1 số K cho trước
+		Cho một mảng các số dương, nhiệm vụ là tìm số các mảng con liền kề có thể có tích nhỏ hơn một số k đã cho.
+		src/main/java/CountProductLessThanK.java
+	
+	
